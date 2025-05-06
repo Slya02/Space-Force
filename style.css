@@ -206,7 +206,7 @@ main {
     color: #d0d6f9;
 }
 
-.register-card select,
+.register-card input,
 .register-card input[type="date"] {
     padding: 0.75rem;
     border-radius: 5px;

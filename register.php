@@ -1,3 +1,30 @@
+<?php
+require './dashbord/function.php';
+
+if(isset($_POST['login'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Validasi login dari database
+    $cekdb = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email' AND password='$password'");
+
+    //hitung jumlah data
+    $hitung= mysqli_num_rows($cekdb);
+    if ($hitung>0) {
+        $_SESSION['log'] = 'True';
+        header('location:./dashbord/index.php');
+    }
+    else {
+        header('location:loginadmin.php');
+    }
+    }
+    if(!isset($_SESSION['login'])){
+    }
+    else{
+        header('location:./dashbord/index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,28 +40,17 @@
                 <h2 class="register-subheading">
                     <span>07</span> JOIN US TO SPACE
                 </h2>
-                <form class="register-card">
-                    <label for="destination">Destination</label>
-                    <select id="destination" name="destination">
-                        <option value="moon">Moon</option>
-                        <option value="venus">Venus</option>
-                        <option value="mars">Mars</option>
-                        <option value="europa">Europa</option>
-                        <option value="titan">Titan</option>
-                    </select>
-                    <label for="mission">Mission</label>
-                    <select id="mission" name="mission">
-                        <option value="exploration">Exploration</option>
-                        <option value="travel">Travel</option>
-                        <option value="mining">Mining</option>
-                        <option value="colonization">Colonization</option>
-                    </select>
-                    <label for="date">Departure Date</label>
+                <form class="register-card" method="POST">
+                    <label for="inputEmail">Email</label>
+                    <input class="form-control" id="inputEmail" name="email" type="email" placeholder="name@example.com" />
+                    <label for="inputPassword">Password</label>
+                    <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" />
+                    <!-- <label for="date">Departure Date</label>
                     <div class="date-input">
                         <span class="calendar-icon">📅</span>
                         <input type="date" id="date" name="date" placeholder="Select a date" />
-                    </div>
-                    <button type="submit">Register</button>
+                    </div> -->
+                    <button type="submit" name="login">Log In</button>
                 </form>
                 <footer>
                     <div class="power-icon">
