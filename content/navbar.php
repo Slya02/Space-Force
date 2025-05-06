@@ -32,8 +32,8 @@
                     TECHNOLOGY 
                 </a>
             </li>
-            <li class="<?= ($current_page == 'none.php') ? 'active' : ''; ?>">
-                <a href="">
+            <li class="<?= ($current_page == 'mission.php') ? 'active' : ''; ?>">
+                <a href="mission.php">
                     <span>05</span> 
                     MISSION
                 </a>

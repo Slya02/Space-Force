@@ -36,5 +36,5 @@
             </main>
         </div>
     </body>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </html>

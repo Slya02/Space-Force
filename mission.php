@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="imagebg" style='background-image: url("assets/background-destination-desktop.jpg");'>
+        <div class="imagebg" style='background-image: url("assets/background-home-desktop.jpg");'>
             <?php include './content/navbar.php'; ?>
             <main style="padding: 20px 165px; display: block;">
                 <h2 class="subheading">
-                    <span>02</span> CHOOSE YOUR DESTINATION
+                    <span>05</span> MISSION Overview
                 </h2>
                 <div class="destination-content">
                     <div class="planet-image">
@@ -19,23 +19,22 @@
                     </div>
                     <div class="planet-info">
                         <ul class="planet-tabs">
-                            <li class="active">Moon</li>
-                            <li>Venus</li>
-                            <li>Mars</li>
-                            <li>Europa</li>
-                            <li>Titan</li>
+                            <li class="active">Exploration</li>
+                            <li>Travel</li>
+                            <li>Mining</li>
+                            <li>Colonization</li>
                         </ul>
-                        <h1 class="planet-name">MOON</h1>
+                        <h1 class="planet-name" style="font-size: 70px;">EXPLORATION</h1>
                         <p class="planet-description"> See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites. </p>
                         <hr />
                         <div class="stats">
                             <div>
-                                <h3>AVG DISTANCE</h3>
-                                <p>384,400 KM</p>
+                                <h3>DURATION</h3>
+                                <p style="font-size: 14px;">384,400 KM</p>
                             </div>
                             <div>
-                                <h3>EST. TRAVEL TIME</h3>
-                                <p>3 DAYS</p>
+                                <h3>EQUIPMENT</h3>
+                                <p style="font-size: 14px;">3 DAYS</p>
                             </div>
                         </div>
                     </div>
@@ -44,12 +43,12 @@
         </div>
         <script type="module">
             import { initPage } from './script.js';
- 
+
             initPage({
-            dataUrl: './data/planet_data.json',
-            defaultItem: 'Moon',
-            order: ['Moon', 'Venus', 'Mars', 'Europa', 'Titan']
+            dataUrl: './data/mission_data.json',
+            defaultItem: 'Exploration',
+            order: ['Exploration', 'Travel', 'Mining', 'Colonization']
             });
-    </script>
+        </script>
     </body>
 </html>

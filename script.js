@@ -1,56 +1,85 @@
-// Utility
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => document.querySelectorAll(selector);
+export const $ = (selector) => document.querySelector(selector);
+export const $$ = (selector) => document.querySelectorAll(selector);
 
-// Fetch JSON helpers
 const fetchJSON = async (url) => {
-    const res = await fetch(url);
-    return res.json();
+  const res = await fetch(url);
+  return res.json();
 };
 
-// Planet Data
-let planets = {};
-(async () => {
-    planets = await fetchJSON('./data/planet_data.json');
-})();
+const getDirection = (current, next, order) =>
+  order.indexOf(next) > order.indexOf(current) ? "right" : "left";
 
-const tabs = $$('.planet-tabs li');
-const planetImage = $('.planet-image img');
-const planetName = $('.planet-name');
-const planetDesc = $('.planet-description');
-const stats = $$('.stats p');
-let currentPlanet = "Moon";
+const switchContent = (data, itemKey, direction) => {
+  const container = $('.destination-content');
+  const { image, name, description, distance, travel } = data[itemKey];
 
-tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-        const nextPlanet = tab.textContent.trim();
-        if (nextPlanet === currentPlanet) return;
-        switchPlanet(nextPlanet, getDirection(currentPlanet, nextPlanet));
+  container.classList.add(`slide-${direction}`);
+  setTimeout(() => {
+    const img = $('.planet-image img');
+    img.src = image;
+    img.alt = name;
+    $('.planet-name').textContent = name;
+    $('.planet-description').textContent = description;
+
+    const stats = $$('.stats p');
+    stats[0].textContent = distance || "";
+    stats[1].textContent = travel || "";
+
+    container.classList.remove(`slide-${direction}`);
+  }, 300);
+};
+
+export const initPage = async ({ dataUrl, defaultItem, order, tabSelector = '.planet-tabs li' }) => {
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+  
+    const fetchJSON = async (url) => {
+      const res = await fetch(url);
+      return res.json();
+    };
+  
+    const getDirection = (current, next, order) =>
+      order.indexOf(next) > order.indexOf(current) ? "right" : "left";
+  
+    const switchContent = (data, itemKey, direction) => {
+      const container = document.querySelector('.destination-content');
+      const { image, name, description, distance, travel } = data[itemKey];
+  
+      container.classList.add(`slide-${direction}`);
+      setTimeout(() => {
+        const img = document.querySelector('.planet-image img');
+        img.src = image;
+        img.alt = name;
+        document.querySelector('.planet-name').textContent = name;
+        document.querySelector('.planet-description').textContent = description;
+  
+        const stats = document.querySelectorAll('.stats p');
+        stats[0].textContent = distance || '';
+        stats[1].textContent = travel || '';
+  
+        container.classList.remove(`slide-${direction}`);
+      }, 300);
+    };
+  
+    const data = await fetchJSON(dataUrl);
+    let currentItem = defaultItem;
+    const tabs = document.querySelectorAll(tabSelector);
+  
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const nextItem = tab.textContent.trim();
+        if (nextItem === currentItem) return;
+        const direction = getDirection(currentItem, nextItem, order);
+        switchContent(data, nextItem, direction);
         tabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
-        currentPlanet = nextPlanet;
+        currentItem = nextItem;
+      });
     });
-});
-
-const getDirection = (current, next) => {
-    const order = ["Moon", "Venus", "Mars", "Europa", "Titan"];
-    return order.indexOf(next) > order.indexOf(current) ? "right" : "left";
-};
-
-const switchPlanet = (planet, direction) => {
-    const container = $('.destination-content');
-    container.classList.add(`slide-${direction}`);
-    setTimeout(() => {
-        const { image, name, description, distance, travel } = planets[planet];
-        planetImage.src = image;
-        planetImage.alt = name;
-        planetName.textContent = name;
-        planetDesc.textContent = description;
-        stats[0].textContent = distance;
-        stats[1].textContent = travel;
-        container.classList.remove(`slide-${direction}`);
-    }, 300);
-};
+  
+    switchContent(data, defaultItem, "right");
+  };
+  
 
 // Crew Data
 let crewMembers = [];

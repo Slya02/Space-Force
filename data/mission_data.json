@@ -1,0 +1,30 @@
+{
+    "Exploration": {
+        "image": "assets/image-moon.png",
+        "name": "EXPLORATION",
+        "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+        "distance": "Varies",
+        "travel": "Space Shuttle, Rovers, Satellites, Space Probes"
+    },
+    "Travel": {
+        "image": "assets/image-venus.png",
+        "name": "Travel",
+        "description": "Travel missions are geared toward human and robotic transport to new destinations. These missions emphasize safety, efficiency, and sustainability in space travel.",
+        "distance": "Varies",
+        "travel": "Spacecraft, Habitats"
+    },
+    "Mining": {
+        "image": "assets/image-mars.png",
+        "name": "Mining",
+        "description": "Mining missions seek to harvest valuable resources like water ice, metals, and other minerals from asteroids, moons, or planets to support deep space exploration and provide raw materials for building and energy.",
+        "distance": "5-10 years",
+        "travel": "Planet Crackers, Excavation Tools"
+    },
+    "Colonization": {
+        "image": "assets/image-europa.png",
+        "name": "Colonization",
+        "description": "Colonization missions aim to establish long-term human presence on other celestial bodies, such as the Moon or Mars. These missions focus on building sustainable habitats, developing self-sufficient ecosystems, and creating infrastructure for long-term survival and growth. The goal is to create a foothold for humanity beyond Earth, ensuring adaptability and expansion into the cosmos.",
+        "distance": "Indefinite",
+        "travel": "Habitats, Life Support Systems, Cryogenic Pods, Energy Generators, Agricultural Units"
+    }
+}
