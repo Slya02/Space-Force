@@ -18,7 +18,7 @@
                     </div>
                     <div class="explore-button">
                         <button>
-                            <a href="destination.html">EXPLORE</a>
+                            <a href="destination.php">EXPLORE</a>
                         </button>
                     </div>
                 </div>

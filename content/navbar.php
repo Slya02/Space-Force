@@ -8,8 +8,8 @@
     <?php $current_page = basename($_SERVER['SCRIPT_NAME']); ?>
     <nav>
         <ul class="main-nav">
-            <li class="<?= ($current_page == 'home.php') ? 'active' : ''; ?>">
-                <a href="home.php">
+            <li class="<?= ($current_page == 'index.php') ? 'active' : ''; ?>">
+                <a href="index.php">
                     <span>01</span> 
                     HOME 
                 </a>
