@@ -1,0 +1,32 @@
+[
+    {
+        "title": "LAUNCH VEHICLE",
+        "description": "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
+        "image": "assets/image-launch-vehicle-portrait.jpg",
+        "alt": "Launch Vehicle"
+    }, 
+    {
+        "title": "SPACE CAPSULE",
+        "description": "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight.",
+        "image": "assets/image-space-capsule-portrait.jpg",
+        "alt": "Space Capsule"
+    }, 
+    {
+        "title": "SPACEPORT",
+        "description": "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
+        "image": "assets/image-spaceport-portrait.jpg",
+        "alt": "Spaceport"
+    }, 
+    {
+        "title": "PLANET CRACKER",
+        "description": "A Planet Cracker is a massive class of spaceship designed specifically for large-scale resource extraction, and it’s the backbone of interstellar mining operations.",
+        "image": "assets/image-planet-cracker-portrait.jpg",
+        "alt": "Planet Cracker"
+    }, 
+    {
+        "title": "SPACECRAFT",
+        "description": "Spacecraft are vehicles designed for travel or operation in outer space, ranging from simple, unmanned probes to advanced, crewed vessels for deep space exploration.",
+        "image": "assets/image-spacecraft-portrait.jpg",
+        "alt": "Space Craft"
+    }
+]
