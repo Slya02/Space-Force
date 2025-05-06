@@ -160,7 +160,6 @@ nav {
     transform: scaleX(1);
 }
 
-/* Main content */
 main {
     flex-grow: 1;
     display: flex;

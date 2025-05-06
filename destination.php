@@ -9,7 +9,7 @@
     <body>
         <div class="imagebg" style='background-image: url("assets/background-destination-desktop.jpg");'>
             <?php include './content/navbar.php'; ?>
-            <main>
+            <main style="padding: 20px 165px; display: block;">
                 <h2 class="subheading">
                     <span>02</span> CHOOSE YOUR DESTINATION
                 </h2>

@@ -9,10 +9,10 @@
     <body>
         <div class="imagebg" style="background-image: url('assets/background-crew-desktop.jpg');">
             <?php include './content/navbar.php'; ?>
-            <h2 class="subheading">
-                <span>03</span> MEET THE CREWS
-            </h2>
-            <main>
+            <main style="padding: 20px 165px; display: block;">
+                <h2 class="subheading">
+                    <span>03</span> MEET THE CREWS
+                </h2>
                 <div class="crew-content">
                     <div class="crew-info">
                         <h3 class="crew-role"></h3>
