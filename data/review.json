@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Andre",
+      "rating": "1/5",
+      "text": "Pilotnya kek orang paok.",
+      "image": "assets/profile.jpg"
+    },
+    {
+      "name": "Ipan",
+      "rating": "2/5",
+      "text": "Pilotnya jomok.",
+      "image": "assets/profile.jpg"
+    },
+    {
+      "name": "Aqil",
+      "rating": "3/5",
+      "text": "I gave it 3 because it's a high class travel, I gave it 3 because that fatass pilot is a douchebag, and he keeps putting people in airlock just for fun",
+      "image": "assets/profile.jpg"
+    },
+    {
+      "name": "Rio",
+      "rating": "1/5",
+      "text": "Bintang satu, Pilot tidak ramah",
+      "image": "assets/profile.jpg"
+    },
+    {
+      "name": "Zekan",
+      "rating": "1/5",
+      "text": "Pilotnya rasis sama orang Gayo",
+      "image": "assets/profile.jpg"
+    }
+]
+  

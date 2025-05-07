@@ -164,3 +164,62 @@ const updateTech = (index) => {
 navDots.forEach((dot, i) => {
     dot.addEventListener("click", () => updateTech(i));
 });
+
+// Review
+let reviewList = [];
+let reviewCurrentIndex = 0;
+
+const reviewContent = $('.review-content');
+const reviewRating = $('.review-rating');
+const reviewName = $('.review-name');
+const reviewText = $('.review-text');
+const reviewImg = $('#review-img'); 
+const reviewDots = $$('.dot');  
+const reviewPrev = $('#review-prev');  
+const reviewNext = $('#review-next');  
+
+(async () => {
+    reviewList = await fetchReviewJSON('./data/review.json');
+    updateReview(0);  
+})();
+
+function updateReview(index, direction = "right") {
+    reviewContent.classList.add(direction === "right" ? "slide-right" : "slide-left");
+
+    setTimeout(() => {
+        const { name, rating, text, image } = reviewList[index];
+        reviewRating.textContent = `Rating: ${rating}`;
+        reviewName.textContent = name;
+        reviewText.textContent = text;
+        reviewImg.src = image;
+
+        reviewDots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+
+        reviewContent.classList.remove("slide-right", "slide-left");
+    }, 300);
+}
+
+function changeReview(newIndex) {
+    if (newIndex === reviewCurrentIndex || reviewList.length === 0) return;
+    
+    updateReview(newIndex, newIndex > reviewCurrentIndex ? "right" : "left");
+    reviewCurrentIndex = newIndex; 
+}
+
+reviewPrev?.addEventListener("click", () => {
+    changeReview((reviewCurrentIndex - 1 + reviewList.length) % reviewList.length);
+});
+
+reviewNext?.addEventListener("click", () => {
+    changeReview((reviewCurrentIndex + 1) % reviewList.length);
+});
+
+reviewDots.forEach((dot, i) => {
+    dot.addEventListener("click", () => changeReview(i));  
+});
+
+async function fetchReviewJSON(url) {
+    const res = await fetch(url);
+    return await res.json();
+}
+
