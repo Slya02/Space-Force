@@ -38,8 +38,8 @@
                     MISSION
                 </a>
             </li>
-            <li class="<?= ($current_page == 'none.php') ? 'active' : ''; ?>">
-                <a href="">
+            <li class="<?= ($current_page == 'review.php') ? 'active' : ''; ?>">
+                <a href="review.php">
                     <span>06</span>
                      REVIEW
                 </a>

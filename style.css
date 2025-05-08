@@ -592,6 +592,53 @@ footer {
     margin-left: 20px;
 }
 
+/*review*/
+.review-content{
+    display: flex;
+    justify-content: space-start;
+    align-items: start;
+    padding: 0px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+}
+
+.review-info{
+    max-width: 500px;
+    margin-left: 50px;
+}
+
+.review-name {
+    font-size: 56px;
+    font-family: "Bellefair", serif;
+    text-transform: uppercase;
+    margin: 10px 0 24px;
+}
+
+.review-rating{
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 4.75px;
+    color: #d0d6f9;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+.review-text{
+    font-size: 28px;
+    font-family: "Bellefair", serif;
+    margin: 10px 0 24px;
+}
+
+.review-image{
+    flex-shrink: 0;
+}
+
+.review-image img{
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
 /* Responsive design */
 @media (max-width: 1200px) {
     h1 {
