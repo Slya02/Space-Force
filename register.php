@@ -1,28 +1,34 @@
 <?php
-require './dashbord/function.php';
+require 'function.php';
 
-if(isset($_POST['login'])){
+if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Validasi login dari database
-    $cekdb = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email' AND password='$password'");
+    // Cek admin
+    $cekdbadmin = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email' AND password='$password'");
+    if (mysqli_num_rows($cekdbadmin) > 0) {
+        $_SESSION['log'] = true;
+        $_SESSION['role'] = 'admin';
+        $_SESSION['email'] = $email;
+        header('location: ./dashbord/index.php');
+        exit;
+    }
 
-    //hitung jumlah data
-    $hitung= mysqli_num_rows($cekdb);
-    if ($hitung>0) {
-        $_SESSION['log'] = 'True';
-        header('location:./dashbord/index.php');
+    // Cek user
+    $cekdbuser = mysqli_query($conn, "SELECT * FROM user WHERE email='$email' AND password='$password'");
+    if (mysqli_num_rows($cekdbuser) > 0) {
+        $_SESSION['log'] = true;
+        $_SESSION['role'] = 'user';
+        $_SESSION['email'] = $email;
+        header('location:index.php');
+        exit;
     }
-    else {
-        header('location:loginadmin.php');
-    }
-    }
-    if(!isset($_SESSION['login'])){
-    }
-    else{
-        header('location:./dashbord/index.php');
-    }
+
+    // Jika login gagal
+    header('location: register.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +41,9 @@ if(isset($_POST['login'])){
     </head>
     <body>
         <div class="imagebg">
-            <?php include './content/navbar.php'; ?>
             <main class="register-page">
                 <h2 class="register-subheading">
-                    <span>07</span> JOIN US TO SPACE
+                    <span>ORBITAL NEXUS</span> | JOIN US TO SPACE
                 </h2>
                 <form class="register-card" method="POST">
                     <label for="inputEmail">Email</label>

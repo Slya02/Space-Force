@@ -3,6 +3,6 @@
 if(isset($_SESSION['log'])){
 }
 else{
-    header('location:loginuser.php');
+    header('register.php');
 }
 ?>

@@ -44,10 +44,10 @@
                      REVIEW
                 </a>
             </li>
-            <li class="<?= ($current_page == 'register.php') ? 'active' : ''; ?>">
-                <a href="register.php">
-                    <span>07</span> 
-                    REGISTER 
+            <li class="<?= ($current_page == 'review.php') ? 'active' : ''; ?>">
+                <a href="account.php">
+                    <span>07</span>
+                     ACCOUNT
                 </a>
             </li>
         </ul>
