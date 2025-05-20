@@ -1,3 +1,8 @@
+<?php
+require 'cek.php';
+require 'function.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

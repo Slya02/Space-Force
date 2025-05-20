@@ -8,13 +8,12 @@ $conn = mysqli_connect("localhost", "root", "", "db_spacestation");
 if(isset($_POST['addnewhistori'])){
     $user = $_POST['user'];
     $tiket = $_POST['tiket'];
-    $asal = $_POST['asal'];
     $tujuan = $_POST['tujuan'];
     $tanggal = $_POST['tanggal'];
     $pukul = $_POST['pukul'];
 
-        $addtotable = mysqli_query($conn,"INSERT INTO histori_booking (id_user,id_tiket,asal,tujuan,tanggal,pukul) 
-        values ('$user','$tiket','$asal','$tujuan','$tanggal','$pukul')");
+        $addtotable = mysqli_query($conn,"INSERT INTO histori_booking (id_user,id_tiket,tujuan,tanggal,pukul) 
+        values ('$user','$tiket','$tujuan','$tanggal','$pukul')");
         if($addtotable){
             header('location:index.php');
         } else {

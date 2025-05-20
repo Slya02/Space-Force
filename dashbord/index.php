@@ -43,7 +43,7 @@ require 'cek.php';
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Revenue Stream
                             </a>
-                            <a class="nav-link" href="logoutadmin.php">
+                            <a class="nav-link" href="logout.php">
                                 Logout
                             </a>
                         </div>
@@ -92,7 +92,6 @@ require 'cek.php';
                                                 FROM histori_booking h
                                                 JOIN user u ON h.id_user = u.id_user
                                                 JOIN tiket t ON h.id_tiket = t.id_tiket
-                                                JOIN planet p1 ON h.asal = p1.id_planet
                                                 JOIN planet p2 ON h.tujuan = p2.id_planet
                                                 ORDER BY h.tanggal ASC, h.pukul ASC
                                                     ";
@@ -102,12 +101,11 @@ require 'cek.php';
                                             $id_histori = $data['id_histori'];
                                             $user = $data['email'];
                                             $tiket = $data['kelas'];
-                                            $asal = $data['asal_nama'];
                                             $tujuan = $data['tujuan_nama'];
                                             $tanggal = $data['tanggal'];
                                             $pukul = $data['pukul'];
 
-                                            $destinasi = htmlspecialchars($asal).' - '.htmlspecialchars($tujuan);
+                                            $destinasi = htmlspecialchars($tujuan);
                                             $pemberangkatan = htmlspecialchars($tanggal).' - '.htmlspecialchars($pukul).' WIB';
                                         ?>
                                         <tr>
