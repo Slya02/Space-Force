@@ -82,8 +82,6 @@ require 'cek.php';
                                                     u.email, 
                                                     t.id_tiket,
                                                     t.kelas, 
-                                                    p1.id_planet AS asal_id,
-                                                    p1.nama AS asal_nama,
                                                     p2.id_planet AS tujuan_id,
                                                     p2.nama AS tujuan_nama,
                                                     h.id_histori,
@@ -101,7 +99,7 @@ require 'cek.php';
                                             $id_histori = $data['id_histori'];
                                             $user = $data['email'];
                                             $tiket = $data['kelas'];
-                                            $tujuan = $data['tujuan_nama'];
+                                            $tujuan = $data['tujuan'];
                                             $tanggal = $data['tanggal'];
                                             $pukul = $data['pukul'];
 
