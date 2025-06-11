@@ -16,14 +16,16 @@ if (isset($_POST['login'])) {
     }
 
     // Cek user
+    else{
     $cekdbuser = mysqli_query($conn, "SELECT * FROM user WHERE email='$email' AND password='$password'");
-    if (mysqli_num_rows($cekdbuser) > 0) {
+    if(mysqli_num_rows($cekdbuser) > 0) {
         $_SESSION['log'] = true;
-        $_SESSION['role'] = 'user';
-        $_SESSION['email'] = $email;
+        // $_SESSION['role'] = 'user';
+        // $_SESSION['email'] = $email;
         header('location:index.php');
         exit;
     }
+}
 
     // Jika login gagal
     header('location: register.php');

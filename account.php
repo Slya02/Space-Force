@@ -26,7 +26,7 @@ require 'function.php';
                         <p class="crew-description"></p>
                     </div>
                     <div class="crew-image">
-                        <img src="assets/DSR_Mathius_Portrait.jpg" alt="Benjamin Mathius" />
+                        <img src="assets/profile.jpg" alt="Your Profile Picture" />
                     </div>
                 </div>
             </main>
